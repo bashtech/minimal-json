@@ -329,7 +329,7 @@ public class JsonObject extends JsonValue implements Iterable<Member> {
       throw new NullPointerException("name is null");
     }
     if (value == null) {
-      throw new NullPointerException("value is null");
+      value = NULL; //I want to support setting null values.
     }
     table.add(name, names.size());
     names.add(name);
@@ -490,7 +490,7 @@ public class JsonObject extends JsonValue implements Iterable<Member> {
       throw new NullPointerException("name is null");
     }
     if (value == null) {
-      throw new NullPointerException("value is null");
+      value = NULL; //I want to support setting null values.
     }
     int index = indexOf(name);
     if (index != -1) {
